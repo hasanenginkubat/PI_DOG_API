@@ -1,0 +1,45 @@
+
+.allDiv {
+    background-image: url(../Images/about.jpg);
+
+    padding: 3em;
+
+    color:wheat;
+
+  }
+  
+
+.div1, .div2 {
+    display: inline-block;
+    width: calc(30% - 50px);
+    margin: 3em 100px;
+    box-sizing: border-box;
+    border-radius: 2em;
+  }
+  
+.div1{
+    background-color: black;
+    color:white
+}
+.div2 {
+    background-color: #0077b5;
+    color: white;
+  }
+  .button{
+    border-radius: 2em;
+    width: 100px;
+    height: 50px;
+    background-color: wheat
+  }
+  .button:hover {
+    box-shadow: 0 0 10px rgba(255, 10, 10, 5);
+  }
+  .p{
+    width: 300px;;
+    height: 300px;
+    margin-left: 33.5em;
+    background-color:wheat;
+    color:black;
+    border-radius: 1em;
+  }
+  
