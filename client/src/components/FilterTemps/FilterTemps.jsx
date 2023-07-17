@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, filetredByTemperement, getAllDogs } from "../../actions/index";
+import { getTemperaments, filteredByTemperament, getAllDogs } from "../../actions/index";
 
 export default function FilterTempe() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export default function FilterTempe() {
   }, [dispatch]);
 
   const handleFilterTemperaments = (e) => {
-    dispatch(filetredByTemperement(e.target.value));
+    dispatch(filteredByTemperament(e.target.value));
     console.log(e.target.value)
   };
 

@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { favDogs, deleteFav, cleanDog } from "../../actions";
+import { addFavoriteDog, removeFavoriteDog, cleanDog} from "../../actions";
 
 export default function Card() {
-  const dogs = useSelector((state) => state.dog);
+  const dogs = useSelector((state) => state.dogs);
   const dispatch = useDispatch();
   const fav = useSelector((state) => state.fav);
 
@@ -17,10 +17,10 @@ export default function Card() {
 
   const handleToggleFavorite = (dog) => {
     if (isFav(dog)) {
-      dispatch(deleteFav(dog));
+      dispatch(removeFavoriteDog(dog));
       console.log(fav)
     } else {
-        dispatch(favDogs(dog));
+        dispatch(addFavoriteDog(dog));
         console.log(fav)
       }
     }

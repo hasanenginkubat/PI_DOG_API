@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { details } from "../../actions/index";
+import { getDetails } from "../../actions/index";
 import { useParams } from "react-router";
 import style from "./details.module.css";
 
@@ -12,10 +12,10 @@ export default function Details() {
 
 
   useEffect(() => {
-    dispatch(details(id));
+    dispatch(getDetails(id));
   }, [dispatch, id]);
 
-  const dogDetails = useSelector((state) => state.detail);
+  const dogDetails = useSelector((state) => state.details);
 
  
 

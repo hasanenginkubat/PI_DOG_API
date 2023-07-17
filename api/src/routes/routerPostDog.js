@@ -1,49 +1,42 @@
 const { Router } = require("express");
-const router = Router();
 const { Dog, Temperament } = require("../db");
+const router = Router();
 
 router.post("/", async (req, res) => {
-    try {
-        const {
-            name,
-            heightMin,
-            heightMax,
-            weightMin,
-            weightMax,
-            life_span,
-            image,
-            temperament
-        } = req.body;
-
-        const createDog = await Dog.create({
-            name,
-            heightMin,
-            heightMax,
-            weightMin,
-            weightMax,
-            life_span,
-            image
+  try {
+    const {
+      name,
+      heightMin,
+      heightMax,
+      weightMin,
+      weightMax,
+      life_span,
+      image,
+      temperament,
+    } = req.body; //Estos son los datos que me llegan por body
+    const createdDog = await Dog.create({
+      name,
+      heightMin,
+      heightMax,
+      weightMin,
+      weightMax,
+      life_span,
+      image,
+    });
+    temperament.map(async (el) => {
+      try {
+        let temps = await Temperament.findAll({
+          where: { name: el },
         });
-
-        const temperamentPromises = temperament.map(async (el) => {
-            try {
-                let temps = await Temperament.findAll({
-                    where: {
-                        name: el
-                    }
-                });
-                await createDog.addTemperament(temps);
-            } catch (error) {
-                res.send(error);
-            }
-        });
-
-        await Promise.all(temperamentPromises);
-
-        res.status(200).send("Dog successfully created!");
-    } catch (error) {
+        await createdDog.addTemperament(temps);
+      } catch (error) {
         res.send(error);
-    }
+      }
+    });
+    res.status(200).send("Dog successfully created!!!");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

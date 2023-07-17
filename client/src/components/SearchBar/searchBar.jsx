@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getDogsByName } from "../../actions/index";
+import { getDogsByQuery } from "../../actions/index";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function SearchBar() {
     e.preventDefault();
     if (query.trim() !== "") {
       console.log(query);
-      dispatch(getDogsByName(query));
+      dispatch(getDogsByQuery(query));
       setQuery("");
     }
   };

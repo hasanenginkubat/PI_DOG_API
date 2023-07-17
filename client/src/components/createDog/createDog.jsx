@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, createDog} from "../../actions/index";
+import { getTemperaments, getCreatedDogs} from "../../actions/index";
 import style from "./createDog.module.css"
 
 export default function CreatedDog() {
@@ -40,7 +40,7 @@ export default function CreatedDog() {
   function handleSubmit(e) {
     e.preventDefault();
     if (Object.values(errors).length === 0 && input.temperament.length !== 0) {
-      dispatch(createDog(input));
+      dispatch(getCreatedDogs(input));
       alert("¡Dog successfully created!");
       navigate("/home");
     } else {
