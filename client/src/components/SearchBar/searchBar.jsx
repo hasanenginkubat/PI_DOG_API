@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogsByQuery } from "../../actions/index";
+import style from "./SearchBar.module.css";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -13,22 +14,21 @@ export default function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim() !== "") {
-      console.log(query);
       dispatch(getDogsByQuery(query));
       setQuery("");
     }
   };
-  
 
   return (
-    <div>
+    <div className={style.searchBar}>
       <input
+        className={style.input}
         value={query}
         type="text"
         placeholder="Search a dog..."
         onChange={handleInputChange}
       />
-      <button type="submit" onClick={handleSubmit}>
+      <button className={style.button} type="submit" onClick={handleSubmit}>
         Search
       </button>
     </div>

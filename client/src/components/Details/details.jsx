@@ -15,7 +15,7 @@ export default function Details() {
     dispatch(getDetails(id));
   }, [dispatch, id]);
 
-  const dogDetails = useSelector((state) => state.details);
+  const dogDetails = useSelector((state) => state.detail);
 
  
 
@@ -29,11 +29,24 @@ export default function Details() {
           <h5>Maximun height: {dogDetails.heightMax} Cm</h5>
           <h5>Minimun weight: {dogDetails.weightMin} Kg</h5>
           <h5>Maximun weight: {dogDetails.weightMax} Kg</h5>
-          <h5>Life span: {dogDetails.life_span} Years</h5>
+          {dogDetails.life_span && (
+        <div>
+              <h5>Life Span: {dogDetails.life_span}</h5>
+              </div>
+              )}
+               {!dogDetails.life_span && dogDetails.life_spanMin && dogDetails.life_spanMax && (
+         <div>
+          <h5>Life Span Min: {dogDetails.life_spanMin}</h5>
+          <h5>Life Span Max: {dogDetails.life_spanMax}</h5>
+          </div>
+          )}
+           {dogDetails.temperament ?
           <h5>Temperaments: {dogDetails.temperament}</h5>
+          : <h5>Temperaments: {dogDetails.temperaments}</h5>
+           }
         </div>
       
       }
     </div>
   );
-}
+} 

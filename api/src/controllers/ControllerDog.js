@@ -1,5 +1,4 @@
-const axios = require("axios");
-
+const axios = require('axios');
 const { Dog, Temperament } = require("../db");
 
 const getApiInfo = async function () {
@@ -35,7 +34,13 @@ const getDBInfo = async function () {
 const getAllInfo = async function () {
   const apiInfoAll = await getApiInfo();
   let dbInfoAll = await getDBInfo();
-  dbInfoAll = await dbInfoAll.map((el) => {
+
+  // Filtreleme işlemi
+  dbInfoAll = dbInfoAll.filter((dbDog) => {
+    return !apiInfoAll.some((apiDog) => apiDog.id === dbDog.id);
+  });
+
+  dbInfoAll = dbInfoAll.map((el) => {
     return {
       id: el.id,
       name: el.name,
@@ -54,6 +59,7 @@ const getAllInfo = async function () {
         .join(", "),
     };
   });
+
   const allInfo = apiInfoAll.concat(dbInfoAll);
   return allInfo;
 };

@@ -1,73 +1,73 @@
 .div {
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
-  
-  .map {
-    background-color: salmon;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    padding: 20px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  .buttonFavorite {
-    font-size: 24px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .onClose {
-    font-size: 16px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #ffffff;
-  }
-  
-  .name {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  img {
-    width: 50%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 2em;
-    margin-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  
-  .informacion {
-    background-color: wheat;
-    width: 60%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 0.5em;
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .info {
-    background-color: #3498db;
-    color: #ffffff;
-    
-    padding: 10px 20px;
-  
-    margin-bottom: 1em;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
 
-  }
-  
+.map {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.buttonFavorite {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.onClose {
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+}
+
+.name {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+img {
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 2em;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.informacion {
+  background-color: wheat;
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 0.5em;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.info {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+}

@@ -1,64 +1,70 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../actions/index";
+import style from "./Form.module.css";
 
 export default function Form() {
+  const dispatch = useDispatch();
   const [userData, setUserData] = useState({
-    password: "",
     email: "",
+    password: "",
   });
-
-  const [errors, setErrors] = useState({});
+  const [userError, setUserError] = useState({});
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserData((prevState) => ({ ...prevState, [name]: value }));
-    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    setUserError((prevState) => ({ ...prevState, [name]: "" }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = validateForm(userData);
     if (Object.keys(validationErrors).length === 0) {
-      // Formu gönderme işlemi
       console.log("Form submitted:", userData);
+  
+      // email ve password'u ayrı ayrı alarak dispatch edin
+      const { email, password } = userData;
+      dispatch(login(email, password));
+  
+      // email ve password'u temizleyin
       setUserData({
-        password: "",
         email: "",
+        password: "",
       });
     } else {
-      setErrors(validationErrors);
+      setUserError(validationErrors);
     }
   };
+  
 
   const validateForm = (data) => {
-    let errors = {};
+    let userError = {};
 
     if (data.password.trim() === "") {
-      errors.password = "Password is required";
+      userError.password = "Password is required";
     }
-
+    if (data.password !== "123") {
+      userError.password = "Wrong password";
+    }
+    if (data.email !== "kubathasanengin@gmail.com") {
+      userError.email = "Wrong email";
+    }
+    if (data.email !== "kubathasanengin@gmail.com" && data.password !== "123") {
+      userError.message = "Wrong email and password";
+    }
     if (data.email.trim() === "") {
-      errors.email = "Email is required";
-    } else if (!data.email.includes("@")) {
-      errors.email = "Invalid email format";
+      userError.email = "Email is required";
     }
-
-    return errors;
+    if (!data.email.includes("@")) {
+      userError.email = "Invalid email format";
+    }
+    return userError;
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={userData.password}
-          onChange={handleInputChange}
-          placeholder="Password"
-        />
-        {errors.password && <p className="error">{errors.password}</p>}
-      </div>
-      <div>
+    <form className={style.form} onSubmit={handleSubmit}>
+      <div className={style.formGroup}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -67,9 +73,20 @@ export default function Form() {
           onChange={handleInputChange}
           placeholder="Email"
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {userError.email && <p className={style.errorMessage}>{userError.email}</p>}
       </div>
-      <button type="submit">Submit</button>
+      <div className={style.formGroup}>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={userData.password}
+          onChange={handleInputChange}
+          placeholder="Password"
+        />
+        {userError.password && <p className={style.errorMessage}>{userError.password}</p>}
+      </div>
+      <button className={style.submitButton} type="submit">Submit</button>
     </form>
   );
 }

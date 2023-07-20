@@ -1,25 +1,24 @@
 .container {
-    padding: 20px;
-  }
-  
-  .buttonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .button {
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #2980b9;
-  }
-  
+  padding: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}

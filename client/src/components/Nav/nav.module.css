@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+  
+  .searchBar {
+    flex: 1;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .link {
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .navItem {
+    font-size: 18px;
+    color: #333333;
+  }
+  
+  .navItem:hover {
+    color: #3498db;
+  }
+  

@@ -1,21 +1,20 @@
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  button {
-    background-color: #f5f5f5;
-    color: #333333;
-    border: none;
-    outline: none;
-    padding: 8px 12px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  button.active {
-    background-color: #3498db;
-    color: #ffffff;
-  }
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #f5f5f5;
+  color: #333333;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: #3498db;
+  color: #ffffff;
+}

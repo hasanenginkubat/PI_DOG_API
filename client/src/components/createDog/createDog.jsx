@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, getCreatedDogs} from "../../actions/index";
-import style from "./createDog.module.css"
+import {  getTemperaments, getCreatedDogs } from "../../actions/index";
+import style from "./createDog.module.css";
 
 export default function CreatedDog() {
   const dispatch = useDispatch();
@@ -15,10 +15,8 @@ export default function CreatedDog() {
     heightMax: "",
     weightMin: "",
     weightMax: "",
-    life_spanMin: "",
-    life_spanMax: "",
+    life_span: "",
     image: "",
-    country: "",
     temperament: [],
   });
 
@@ -34,12 +32,13 @@ export default function CreatedDog() {
       })
     );
   }
-  
-
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (Object.values(errors).length === 0 && input.temperament.length !== 0) {
+    if (
+      Object.values(errors).length === 0 &&
+      input.temperament.length !== 0
+    ) {
       dispatch(getCreatedDogs(input));
       alert("¡Dog successfully created!");
       navigate("/home");
@@ -168,21 +167,14 @@ export default function CreatedDog() {
             </div>
 
             <div className={style.inputDiv}>
-              <label className={style.label}> Life Span Min - Max-</label>
+              <label className={style.label}>Life Span</label>
+              
               <input
                 className={style.input}
                 onChange={(e) => handleInputChange(e)}
                 type="text"
-                name="life_spanMin"
-                value={input.life_spanMin}
-                required
-              />
-              <input
-                className={style.input}
-                onChange={(e) => handleInputChange(e)}
-                type="text"
-                name="life_spanMax"
-                value={input.life_spanMax}
+                name="life_span"
+                value={input.life_span}
                 required
               />
               <span className={style.validation}>
@@ -190,7 +182,7 @@ export default function CreatedDog() {
               </span>
             </div>
             <div className={style.inputDiv}>
-              <label className={style.label}> image-</label>
+              <label className={style.label}>Image URL -</label>
               <input
                 className={style.input}
                 onChange={(e) => handleInputChange(e)}
@@ -230,12 +222,12 @@ export default function CreatedDog() {
               </button>
             </div>
           ))}
-
         </div>
       </div>
     </div>
   );
 }
+
 
 function validate(input) {
   let errors = {};
@@ -282,22 +274,6 @@ function validate(input) {
     errors.weightMax = "Maximun weight can't be equal than minimun weight";
   }
 
-
-  if (!input.life_spanMin) {
-    errors.life_spanMin = "Minimum life span is required";
-  } else if (!/^([0-9])*$/.test(input.life_spanMin)) {
-    errors.life_spanMin = "Minimum life span should be a number";
-  } else if (input.life_spanMin < 0) {
-    errors.life_spanMin = "Minimum life span should be a positive number";
-  }
-  
-  if (!input.life_spanMax) {
-    errors.life_spanMax = "Maximum life span is required";
-  } else if (!/^([0-9])*$/.test(input.life_spanMax)) {
-    errors.life_spanMax = "Maximum life span should be a number";
-  } else if (input.life_spanMax < input.life_spanMin) {
-    errors.life_spanMax = "Maximum life span can't be less than minimum life span";
-  }
   
   if (!input.temperament) {
     errors.temperament = "Temperemnts are required";

@@ -1,0 +1,93 @@
+.mainDiv {
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dogCreate {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .created {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .inputDiv {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .validation {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .divSelect {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .select {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .buttonCreate {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .divButnn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .butnn {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .butnn:last-child {
+    margin-right: 0;
+  }
+  
