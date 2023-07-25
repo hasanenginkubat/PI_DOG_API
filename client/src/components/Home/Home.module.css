@@ -1,5 +1,21 @@
+/* Home.module.css */
+
 .container {
   padding: 20px;
+}
+
+.selectcontainer {
+  margin-bottom: 30px;
+  
+}
+
+.botonfiltro {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 8px solid #3498db;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .buttonContainer {
@@ -17,6 +33,7 @@
   margin-right: 10px;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 2em;
 }
 
 .button:hover {

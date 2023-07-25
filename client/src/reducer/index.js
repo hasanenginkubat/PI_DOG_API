@@ -4,7 +4,6 @@ const initialState = {
   temperaments: [],
   fav: [],
   detail: [],
-  loading: true,
   email: "",
   password: "",
 };
@@ -16,7 +15,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         dog: action.payload,
         allDogs: action.payload,
-        loading: false,
       };
     case "GET_TEMPERAMENTS":
       return {
@@ -38,34 +36,72 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         detail: action.payload,
       };
-    case "DELETE_DOG":
-      return {
-        ...state,
-      };
-    case "ORDER_WEIGHT":
-      let dogKg;
-      if (action.payload === "weightMin") {
-        dogKg = state.allDogs.sort((a, b) => a.weightMin - b.weightMin);
-      } else if (action.payload === "weightMax") {
-        dogKg = state.allDogs.sort((a, b) => b.weightMax - a.weightMax);
-      }
-      return {
-        ...state,
-        allDogs: dogKg,
-      };
-
-    case "ORDER_ATOZ":
-      let orderedDogs;
-      if (action.payload === "alphabetical") {
-        orderedDogs = state.allDogs.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (action.payload === "reverseAlphabetical") {
-        orderedDogs = state.allDogs.sort((a, b) => b.name.localeCompare(a.name));
-      }
-      return {
-        ...state,
-        allDogs: orderedDogs,
-      };
-
+      case "DELETE_DOG":
+        console.log(action.payload.name)
+        return {
+          ...state,
+          dog: state.dog.filter((dog) => dog.name !== action.payload.name),
+        };
+      
+      case "ORDER_WEIGHT":
+        let filteredDogs;
+        if (action.payload === "weightMin") {
+          let weightMin = state.dog.sort((a, b) => {
+            if (a.weightMin > b.weightMin) {
+              return 1;
+            }
+            if (b.weightMin > a.weightMin) {
+              return -1;
+            }
+            return 0;
+          });
+          filteredDogs = weightMin;
+        }
+        if (action.payload === "weightMax") {
+          let weightMax = state.dog.sort((a, b) => {
+            if (a.weightMax > b.weightMax) {
+              return -1;
+            }
+            if (b.weightMax > a.weightMax) {
+              return 1;
+            }
+            return 0;
+          });
+          filteredDogs = weightMax;
+        }
+        return {
+          ...state,
+          dog: filteredDogs,
+        };
+      case "ORDER_ATOZ":
+        let orderedDogs;
+        if (action.payload === "ascendente") {
+          let orderedAToZ = state.dog.sort((a, b) => {
+            if (a.name > b.name) {
+              return 1;
+            }
+            if (b.name > a.name) {
+              return -1;
+            }
+            return 0;
+          });
+          orderedDogs = orderedAToZ;
+        } else {
+          let orderedZToA = state.dog.sort((a, b) => {
+            if (a.name > b.name) {
+              return -1;
+            }
+            if (b.name > a.name) {
+              return 1;
+            }
+            return 0;
+          });
+          orderedDogs = orderedZToA;
+        }
+        return {
+          ...state,
+          dog: orderedDogs,
+        };
     case "FILTERED_BY_TEMP":
       let filteredDogies = state.allDogs.filter((el) =>
         el.temperament?.includes(action.payload) ? el : null
@@ -94,12 +130,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         dog: state.dog.filter((d) => d.id !== action.payload.id),
-      };
-
-    case "CLEANER":
-      return {
-        ...state,
-        loading: true,
       };
 
       case "USER_DATAPE":

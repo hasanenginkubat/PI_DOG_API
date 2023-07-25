@@ -2,12 +2,13 @@ const { Router } = require("express");
 const router = Router();
 const { Dog } = require("../db");
 
-router.delete("/:id", async function (req, res) {
-  const { id } = req.params;
+router.delete("/", async function (req, res) {
+
   try {
-    if (id) {
+    const { name } = req.query;
+    if (name) {
       await Dog.destroy({
-        where: { id: id },
+        where: { name: name },
       });
       res.send({ msg: "Dog deleted" });
     }

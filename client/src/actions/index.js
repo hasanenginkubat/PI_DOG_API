@@ -91,13 +91,13 @@ export function getDetails(payload) {
   };
 }
 
-export function deleteDog(id) {
+export function deleteDog(payload) {
   return async function (dispatch) {
     try {
-      const deleteDog = await axios.delete(`http://localhost:3001/doggos/${id}`);
+      await axios.delete(`http://localhost:3001/doggos/?name=${payload}`);
       return dispatch({
         type: "DELETE_DOG",
-        payload: deleteDog,
+        payload: { name: payload },
       });
     } catch (error) {
       console.log(error);
@@ -105,19 +105,14 @@ export function deleteDog(id) {
   };
 }
 
-export function cleanDog() {
+
+export function cleanDog(payload) {
   return {
     type: "CLEAN_DOG",
-    payload: {},
+    payload
   };
 }
 
-export function cleaner() {
-  return {
-    type: "CLEANER",
-    payload: {},
-  };
-}
 
 export const addFav = (payload) => {
   return { 

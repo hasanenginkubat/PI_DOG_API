@@ -1,43 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addFav, deleteFav, cleanDog } from "../../actions";
+import { addFav, deleteFav, cleanDog, deleteDog } from "../../actions";
 import Pagination from "../Pagination/Pagination";
 import { Link } from "react-router-dom";
 import style from "./Card.module.css";
 
-export default function Card() {
+
+export default function Card({ currentPage,  setCurrentPage}) {
   const allDogs = useSelector((state) => state.dog);
   const dispatch = useDispatch();
   const fav = useSelector((state) => state.fav);
-
-  const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
-
-  // Aynı olan köpekleri filtreleyen fonksiyon
-  const filterDuplicateDogs = (dogs) => {
-    const uniqueDogs = [];
-    dogs.forEach((dog) => {
-      if (!uniqueDogs.some((d) => d.id === dog.id && d.name === dog.name)) {
-        uniqueDogs.push(dog);
-      }
-    });
-    return uniqueDogs;
-  };
-
-  // Filtrelenmiş ve sayfalandırılmış köpekleri alın
-  const filteredDogs = filterDuplicateDogs(allDogs);
+  const filteredDogs = allDogs
   const startIdx = (currentPage - 1) * pageSize;
   const endIdx = startIdx + pageSize;
   const paginatedDogs = filteredDogs.slice(startIdx, endIdx);
 
   const isList = (dog) => {
-    return allDogs.find((e) => e.id === dog.id && e.name === dog.name);
+    return allDogs.some((e) => e.id === dog.id && e.name === dog.name);
   };
-
+  
   const isFav = (dog) => {
-    return fav.find((favDog) => favDog.id === dog.id && favDog.name === dog.name);
+    return fav.some((favDog) => favDog.id === dog.id && favDog.name === dog.name);
   };
-
+  
   const handleToggleFavorite = (dog) => {
     if (isFav(dog)) {
       dispatch(deleteFav(dog));
@@ -47,13 +33,21 @@ export default function Card() {
       console.log(fav);
     }
   };
-
   const onClose = (dog) => {
     if (isList(dog)) {
       dispatch(cleanDog(dog));
     }
   };
 
+  const clear = (dog) => {
+    
+      if(dog){
+        dispatch(deleteDog(dog));
+        alert("DOG DELETED")
+      }
+      
+  };
+  
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -75,22 +69,19 @@ export default function Card() {
           </button>
           <h1 className={style.name}>{dog.name}</h1>
           <img src={dog.image} alt={dog.name} />
-          <div className={style.informacion}></div>
+          <div className={style.informacion}>
           <h6>Weight Max: {dog.weightMax}</h6>
           <h6>Weight Min: {dog.weightMin}</h6>
           <h6>Height Max: {dog.heightMax}</h6>
           <h6>Height Min: {dog.heightMin}</h6>
           {dog.life_span && <h6>Life Span: {dog.life_span}</h6>}
-          {dog.life_spanMin && dog.life_spanMax && (
-            <div>
-              <h6>Life Span Min: {dog.life_spanMin}</h6>
-              <h6>Life Span Max: {dog.life_spanMax}</h6>
-            </div>
-          )}
+          </div>
+         
           <div>
             <Link to={`/details/${dog.id}`}>
               <button className={style.info}>Dog info</button>
             </Link>
+            <button className={style.delete} onClick={() => clear(dog.name)}>DELETE</button>
           </div>
         </div>
       ))}

@@ -1,11 +1,16 @@
 .container {
     background-color: #f5f5f5;
     padding: 20px;
+    background-image: url("https://cdn.yenicaggazetesi.com.tr/news/762022.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
   .title {
     text-align: center;
     margin-bottom: 20px;
+    color:wheat
   }
   
   .card {
@@ -85,4 +90,10 @@
   .infoButton:hover {
     background-color: #2980b9;
   }
-  
+  .delete{
+    background-color: red;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+  }

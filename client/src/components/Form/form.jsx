@@ -23,11 +23,11 @@ export default function Form() {
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form submitted:", userData);
   
-      // email ve password'u ayrı ayrı alarak dispatch edin
+      
       const { email, password } = userData;
       dispatch(login(email, password));
   
-      // email ve password'u temizleyin
+    
       setUserData({
         email: "",
         password: "",
@@ -63,6 +63,7 @@ export default function Form() {
   };
 
   return (
+    
     <form className={style.form} onSubmit={handleSubmit}>
       <div className={style.formGroup}>
         <label htmlFor="email">Email</label>
@@ -86,7 +87,7 @@ export default function Form() {
         />
         {userError.password && <p className={style.errorMessage}>{userError.password}</p>}
       </div>
-      <button className={style.submitButton} type="submit">Submit</button>
+      <button className={style.submitButton} type="submit">LOGIN</button>
     </form>
   );
 }

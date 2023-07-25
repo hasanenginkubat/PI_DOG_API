@@ -1,93 +1,119 @@
+/* Diğer stiller burada... */
+
 .mainDiv {
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-image: url("https://wallpaperaccess.com/full/266717.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.h1 {
+  margin-bottom: 30px;
+  color: black
+}
+
+.dogCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.created {
+  background-color: peru;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputDiv {
+  margin-bottom: 10px;
+  border-radius: 1em;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
   
-  .h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .dogCreate {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .created {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    padding: 20px;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .inputDiv {
-    margin-bottom: 10px;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .validation {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .divSelect {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .select {
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .buttonCreate {
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .divButnn {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .butnn {
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    padding: 5px 10px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .butnn:last-child {
-    margin-right: 0;
-  }
-  
+}
+
+.input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  outline: none;
+}
+
+.validation {
+  color: blue;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.divSelect {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 1em;
+}
+
+.select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 1em;
+  outline: none;
+  background-color: #f8f8f8;
+}
+
+.buttonCreate {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 1em;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonCreate:hover {
+  background-color: #0056b3;
+}
+
+.divButnn {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.butnn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  outline: none;
+  margin-right: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.butnn:hover {
+  background-color: #e1e1e1;
+}
+

@@ -47,5 +47,9 @@ export default function Pagination({ totalCount, pageSize, currentPage, onPageCh
     return pageNumbers;
   };
 
-  return <div className={style.pagination}>{generatePageNumbers()}</div>;
+  return (
+  <div className={style.pagination}>
+    {generatePageNumbers()}
+  </div>
+  );
 }
