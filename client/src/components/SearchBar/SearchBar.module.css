@@ -6,6 +6,7 @@
 
 .input {
   padding: 8px;
+  height: 25px;
   border: 1px solid #ccc;
   border-radius: 30em;
   margin-right: 10px;
@@ -18,8 +19,23 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #2980b9;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  --glow-color: #2980b9;
+  --glow-spread-color: #2980b9;
+  background-color: var(--glow-spread-color);
+  box-shadow: 0 0 2em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
 }

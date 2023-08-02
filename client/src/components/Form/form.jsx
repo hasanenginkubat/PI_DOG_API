@@ -63,10 +63,10 @@ export default function Form() {
   };
 
   return (
-    
+    <div className={style.as}>
     <form className={style.form} onSubmit={handleSubmit}>
       <div className={style.formGroup}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">EMAIL</label>
         <input
           type="email"
           name="email"
@@ -77,7 +77,7 @@ export default function Form() {
         {userError.email && <p className={style.errorMessage}>{userError.email}</p>}
       </div>
       <div className={style.formGroup}>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">PASSWORD</label>
         <input
           type="password"
           name="password"
@@ -89,5 +89,6 @@ export default function Form() {
       </div>
       <button className={style.submitButton} type="submit">LOGIN</button>
     </form>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ function About() {
 
   return (
     <div className={style.allDiv}>
-      <h1>Engin KUBAT</h1>
+      <h1 className={style.name}>Engin KUBAT</h1>
       
       <button className={style.button} onClick={() => setLanguage(language === "tr" ? "es" : "tr")}>
   {language === "tr" ? (

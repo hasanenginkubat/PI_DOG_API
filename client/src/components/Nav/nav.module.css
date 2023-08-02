@@ -5,29 +5,118 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--glow-color);
+  --glow-color: #fa8072;
+  --glow-spread-color: black;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 2em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
 }
 
 .menu {
   display: flex;
   gap: 20px;
+
+  
 }
 
 .link {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #2980b9;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
+}
+.link:hover {
+  --glow-color: #2980b9;
+  --glow-spread-color: #2980b9;
+  background-color: var(--glow-spread-color);
+  box-shadow: 0 0 2em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+.link1{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #2980b9;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
+}
+.link1:hover {
+  --glow-color: #2980b9;
+  --glow-spread-color: #2980b9;
+  background-color: var(--glow-spread-color);
+  box-shadow: 0 0 2em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+.link2{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #2980b9;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
+}
+.link2:hover {
+  --glow-color: #2980b9;
+  --glow-spread-color: #2980b9;
+  background-color: var(--glow-spread-color);
+  box-shadow: 0 0 2em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+.link3{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #2980b9;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
+}
+.link3:hover {
+  --glow-color: #2980b9;
+  --glow-spread-color: #2980b9;
+  background-color: var(--glow-spread-color);
+  box-shadow: 0 0 2em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
 }
 
 .navItem {
   margin: 0;
   padding: 8px;
+  
+  
 }
 
 .searchBar {
   flex: 0.5;
   margin-left: 39em;
+  
 
 
 }

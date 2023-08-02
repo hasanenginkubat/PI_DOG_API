@@ -1,20 +1,32 @@
+.as {
+  margin: 0;
+  padding: 0;
+  background-image: url("../Imagenes/dog.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .form {
-    max-width: 300px;
+    max-width: 600px;
+    max-height: 600px;
     margin: 0 auto;
     padding: 250px;
     background-color: #f5f5f5;
-    border: 1px solid red;
-    border-radius: 4px;
-    background-image: url("https://as2.ftcdn.net/v2/jpg/05/72/64/25/1000_F_572642550_SjoKt4GHveSuVIu9vJy9nXhpveDgaWI6.jpg");
+    border: 1px solid gray;
+    border-radius: 2em;
+    background-image: url("../Imagenes/dog.jpg");
     margin-bottom: 7em;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  
   }
   
   .formGroup {
     margin-bottom: 30px;
     border-radius: 1em;
+    color: #2980b9;
     
   }
   
@@ -37,16 +49,30 @@
   }
   
   .submitButton {
+    padding: 8px 16px;
     background-color: #3498db;
-    color: #ffffff;
+    color: #fff;
     border: none;
-    outline: none;
-    padding: 10px 20px;
-    text-decoration: none;
+    border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: var(--glow-color);
+    background-color: var(--glow-color);
+    --glow-color: #2980b9;
+    --glow-spread-color: white;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 20em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+    border-radius: 3em;
   }
   
   .submitButton:hover {
-    background-color: #2980b9;
+    --glow-color: #2980b9;
+    --glow-spread-color: #2980b9;
+    background-color: var(--glow-spread-color);
+    box-shadow: 0 0 2em 1em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
   }
   

@@ -19,17 +19,21 @@
   
 .div1{
     background-color: black;
-    color:white
+    color:white;
+    margin-left: 12em;
 }
 .div2 {
     background-color: #0077b5;
     color: white;
+    margin-left: 12em;
   }
   .button{
     border-radius: 2em;
     width: 100px;
     height: 50px;
-    background-color: wheat
+    background-color: wheat;
+
+    margin-left: 47.5em;
   }
   .button:hover {
     box-shadow: 0 0 10px rgba(255, 10, 10, 5);
@@ -41,5 +45,8 @@
     background-color:wheat;
     color:black;
     border-radius: 1em;
+  }
+  .name{
+    margin-left: 18.5em;
   }
   

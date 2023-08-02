@@ -5,33 +5,79 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-image: url("https://wallpaperaccess.com/full/266717.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #708090;;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
 }
 
 
 .h1 {
   margin-bottom: 30px;
-  color: black
+  padding: 8px 16px;
+
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #fa8072;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
 }
 
 .dogCreate {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color:#708090;
 }
 
 .created {
-  background-color: peru;
+
   border: 1px solid #ddd;
   padding: 20px;
   max-width: 400px;
   width: 100%;
-  border-radius: 2em;
+  background-color: #708090;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #fa8072;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
 }
 
 .form {
@@ -58,24 +104,39 @@
 }
 
 .validation {
-  color: blue;
+  color: #3498db;
   font-size: 14px;
   margin-top: 5px;
 }
 
 .divSelect {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  background-color: black;
-  border-radius: 1em;
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  background-color: #708090;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--glow-color);
+  background-color: var(--glow-color);
+  --glow-color: #708090;;
+  --glow-spread-color: white;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+  0 0 20em 1em var(--glow-spread-color),
+  inset 0 0 .75em .25em var(--glow-color);
+  border-radius: 3em;
+  margin-right: 2em;
 }
 
 .select {
   flex: 1;
   padding: 10px;
-  border: 1px solid blue;
+  border: 1px solid #708090;
   border-radius: 1em;
   outline: none;
   background-color: #f8f8f8;
@@ -85,7 +146,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 1em;
-  background-color: #007bff;
+  background-color: #708090;
   color: #fff;
   cursor: pointer;
   outline: none;
@@ -93,7 +154,7 @@
 }
 
 .buttonCreate:hover {
-  background-color: #0056b3;
+  background-color: #708090;
 }
 
 .divButnn {
@@ -106,7 +167,7 @@
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  background-color: #f8f8f8;
+  background-color: #708090;
   cursor: pointer;
   outline: none;
   margin-right: 5px;

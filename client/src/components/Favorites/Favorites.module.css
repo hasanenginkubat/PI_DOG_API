@@ -1,10 +1,27 @@
+
 .container {
     background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 1em;
     padding: 20px;
-    background-image: url("https://cdn.yenicaggazetesi.com.tr/news/762022.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--glow-color);
+    background-color: var(--glow-color);
+    --glow-color: #2980b9;
+    --glow-spread-color: white;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 20em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+    border-radius: 3em;
+    width: 30em;
+    margin-left: 26em;
+    margin-top: 3em;
+   
+
   }
   
   .title {
@@ -14,17 +31,34 @@
   }
   
   .card {
-    background-color: salmon;
+    
     border: 1px solid #cccccc;
-    border-radius: 4px;
     padding: 20px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 1em;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--glow-color);
+    background-color: var(--glow-color);
+    --glow-color: #fa8072;
+    --glow-spread-color: white;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 20em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+    border-radius: 3em;
   }
   
   .infoWrapper {
     flex: 1;
+    
   }
   
   .favoriteButton {
@@ -35,11 +69,7 @@
     cursor: pointer;
   }
   
-  .name {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-  }
+
   
   .image {
     width: 200px;
@@ -82,18 +112,40 @@
     color: #ffffff;
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 4px 8px;
     text-decoration: none;
     cursor: pointer;
+    margin-right: auto;
+    margin-left:  auto;
   }
   
   .infoButton:hover {
-    background-color: #2980b9;
+    --glow-color: #2980b9;
+    --glow-spread-color: #2980b9;
+    background-color: var(--glow-spread-color);
+    box-shadow: 0 0 2em 1em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
   }
   .delete{
     background-color: red;
-    color: black;
+    color: #ffffff;
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
+  }
+  .delete:hover {
+    --glow-color: red;
+    --glow-spread-color: red;
+    background-color: var(--glow-spread-color);
+    box-shadow: 0 0 2em 1em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
+  }
+  .favoriteButton:hover {
+    font-size: 24px;
+    background-color: red;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: auto;
+    transition: all 0.3s;
   }

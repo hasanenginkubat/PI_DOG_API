@@ -11,11 +11,21 @@
 
   
   .detail {
-    background-color: palevioletred;
     border: 1px solid #cccccc;
     border-radius: 1em;
     padding: 20px;
     text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--glow-color);
+    background-color: var(--glow-color);
+    --glow-color: #2980b9;
+    --glow-spread-color: white;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 20em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+    border-radius: 3em;
   }
   
   .img {

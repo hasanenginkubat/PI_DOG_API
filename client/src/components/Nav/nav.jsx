@@ -13,13 +13,13 @@ export default function Nav() {
         <Link className={styles.link} to="/home">
           <h3 className={styles.navItem}>Home</h3>
         </Link>
-        <Link className={styles.link} to="/about">
+        <Link className={styles.link1} to="/about">
           <h3 className={styles.navItem}>About</h3>
         </Link>
-        <Link className={styles.link} to="/favorites">
+        <Link className={styles.link2} to="/favorites">
           <h3 className={styles.navItem}>Favorites</h3>
         </Link>
-        <Link className={styles.link} to="/createDog">
+        <Link className={styles.link3} to="/createDog">
           <h3 className={styles.navItem}>Create Dog</h3>
         </Link>
       </div>

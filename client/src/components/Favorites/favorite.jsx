@@ -21,6 +21,7 @@ export default function Favorites() {
 };
 
   return (
+    <div className={style.body}>
     <div className={style.container}>
       <h1 className={style.title}>Favorites</h1>
       {fav.map((dog) => (
@@ -31,20 +32,16 @@ export default function Favorites() {
           >
             ❤️
           </button>
-          <h1 className={style.name}>{dog.name}</h1>
           <img className={style.image} src={dog.image} alt={dog.name} />
           <div className={style.details}>
-            <h6>Weight Max: {dog.weightMax}</h6>
-            <h6>Weight Min: {dog.weightMin}</h6>
-            <h6>Height Max: {dog.heightMax}</h6>
-            <h6>Height Min: {dog.heightMin}</h6>
           </div>
           <Link to={`/detail/${dog.id}`}>
-            <button className={style.infoButton}>Dog Info</button>
+            <button className={style.infoButton}>DOG INFO</button>
           </Link>
           <button className={style.delete} onClick={() => clear(dog.name)}>DELETE</button>
         </div>
       ))}
+    </div>
     </div>
   );
 }
