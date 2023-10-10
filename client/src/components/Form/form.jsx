@@ -67,6 +67,8 @@ export default function Form() {
     <form className={style.form} onSubmit={handleSubmit}>
       <div className={style.formGroup}>
         <label htmlFor="email">EMAIL</label>
+        <h4 style={{color: "white"}}>kubathasanengin@gmail.com</h4>
+
         <input
           type="email"
           name="email"
@@ -78,6 +80,7 @@ export default function Form() {
       </div>
       <div className={style.formGroup}>
         <label htmlFor="password">PASSWORD</label>
+        <h4 style={{color: "white"}}>123</h4>
         <input
           type="password"
           name="password"
