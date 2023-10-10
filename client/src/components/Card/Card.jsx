@@ -68,7 +68,7 @@ export default function Card({ currentPage, setCurrentPage }) {
               X
             </button>
             <h1 className={style.name}>{dog.name}</h1>
-            <img src={dog.image} alt={dog.name} />
+            <img src={dog.reference_image_id} alt={dog.name} />
             <div className={style.informacion}>
               <h6>Weight Max: {dog.weightMax}</h6>
               <h6>Weight Min: {dog.weightMin}</h6>

@@ -3,7 +3,7 @@ import axios from "axios";
 export function getAllDogs() {
   return async function (dispatch) {
     try {
-      let dog = await axios.get("http://localhost:3001/dogs");
+      let dog = await axios.get("https://dogs-nuwb.onrender.com/dogs");
       return dispatch({
         type: "GET_DOGS",
         payload: dog.data,
@@ -37,7 +37,7 @@ export function createdInDb(payload) {
 
 export function getTemperaments() {
   return async function (dispatch) {
-    let temperaments = await axios.get("http://localhost:3001/temperament");
+    let temperaments = await axios.get("https://dogs-nuwb.onrender.com/temperament");
     return dispatch({
       type: "GET_TEMPERAMENTS",
       payload: temperaments.data,
@@ -54,7 +54,7 @@ export function filteredByTemperament(payload) {
 
 export function getCreatedDogs(payload) {
   return async function (dispatch) {
-    let postDog = await axios.post("http://localhost:3001/dog", payload);
+    let postDog = await axios.post("https://dogs-nuwb.onrender.com/dog", payload);
     return dispatch({
       type: "CREATE_DOG",
       payload: postDog
@@ -65,7 +65,7 @@ export function getCreatedDogs(payload) {
 export function getDogsByQuery(payload) {
   return async function (dispatch) {
     try {
-      let dogNames = await axios.get(`http://localhost:3001/dogs?name=${payload}`);
+      let dogNames = await axios.get(`https://dogs-nuwb.onrender.com/dogs?name=${payload}`);
       return dispatch({
         type: "DOGS_BY_NAME",
         payload: dogNames.data,
@@ -80,7 +80,7 @@ export function getDogsByQuery(payload) {
 export function getDetails(payload) {
   return async function (dispatch) {
     try {
-      const details = await axios.get(`http://localhost:3001/dogs/${payload}`);
+      const details = await axios.get(`https://dogs-nuwb.onrender.com/dogs/${payload}`);
       return dispatch({
         type: "GET_DOGS_BY_ID",
         payload: details.data,
@@ -94,7 +94,7 @@ export function getDetails(payload) {
 export function deleteDog(payload) {
   return async function (dispatch) {
     try {
-      await axios.delete(`http://localhost:3001/doggos/?name=${payload}`);
+      await axios.delete(`https://dogs-nuwb.onrender.com/doggos/?name=${payload}`);
       return dispatch({
         type: "DELETE_DOG",
         payload: { name: payload },

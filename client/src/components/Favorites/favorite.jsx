@@ -32,7 +32,7 @@ export default function Favorites() {
           >
             ❤️
           </button>
-          <img className={style.image} src={dog.image} alt={dog.name} />
+          <img className={style.image} src={dog.reference_image_id} alt={dog.name} />
           <div className={style.details}>
           </div>
           <Link to={`/detail/${dog.id}`}>

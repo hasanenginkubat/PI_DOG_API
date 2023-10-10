@@ -16,7 +16,7 @@ export default function CreatedDog() {
     weightMin: "",
     weightMax: "",
     life_span: "",
-    image: "",
+    reference_image_id: "",
     temperament: [],
   });
 
@@ -187,8 +187,8 @@ export default function CreatedDog() {
                 className={style.input}
                 onChange={(e) => handleInputChange(e)}
                 type="text"
-                name="image"
-                value={input.image}
+                name="reference_image_id"
+                value={input.reference_image_id}
                 required
               />
               <span className={style.validation}>
